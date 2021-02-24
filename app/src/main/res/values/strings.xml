@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Modelo  Vista Presentador</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="digite_usuario">Digite un usuario</string>
+    <string name="digite_password">Digite la contraseña</string>
+    <string name="requerido">Requerido</string>
+    <string name="rechazo_credenciales">El usuario o la contraseña no son válidos</string>
+    <string name="saludo">Buenas noches</string>
+</resources>

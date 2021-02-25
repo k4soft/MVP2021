@@ -1,5 +1,7 @@
 package co.com.modelovistapresentador.login;
 
+import co.com.modelovistapresentador.persistencia.impl.DaoSQLite;
+
 public class LoginPresenter implements Login.Presenter {
 
     private Login.View view;
@@ -13,6 +15,7 @@ public class LoginPresenter implements Login.Presenter {
     @Override
     public void validarInformacion() {
         if(view != null){
+            model.setDao(new DaoSQLite());
             model.setCredenciales(view.getCredenciales());
             model.validarInformacion();
         }

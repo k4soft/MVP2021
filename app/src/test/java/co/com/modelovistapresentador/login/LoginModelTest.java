@@ -32,6 +32,7 @@ public class LoginModelTest {
     public void requerirCredenciales(){
         when(view.getCredenciales()).thenReturn(null);
         model.setCredenciales(view.getCredenciales());
+        model.setDao(new DaoTest());
         model.validarInformacion();
         verify(view).requerirUsuario();
         verify(view).requerirPassword();
@@ -43,6 +44,7 @@ public class LoginModelTest {
         credencial.setUser("");
         when(view.getCredenciales()).thenReturn(null);
         model.setCredenciales(view.getCredenciales());
+        model.setDao(new DaoTest());
         model.validarInformacion();
         verify(view).requerirUsuario();
     }
@@ -54,6 +56,7 @@ public class LoginModelTest {
         credencial.setPassword("");
         when(view.getCredenciales()).thenReturn(null);
         model.setCredenciales(view.getCredenciales());
+        model.setDao(new DaoTest());
         model.validarInformacion();
         verify(view).requerirPassword();
     }
@@ -65,6 +68,7 @@ public class LoginModelTest {
         credencial.setPassword("giuuiiugiug");
         when(view.getCredenciales()).thenReturn(null);
         model.setCredenciales(view.getCredenciales());
+        model.setDao(new DaoTest());
         model.validarInformacion();
         verify(view).rechazarCredenciales();
     }
@@ -76,8 +80,7 @@ public class LoginModelTest {
         credencial.setPassword("1234*");
         when(view.getCredenciales()).thenReturn(credencial);
         model.setCredenciales(view.getCredenciales());
-        Dao dao = new DaoTest();
-        model.setDao(dao);
+        model.setDao(new DaoTest());
         model.validarInformacion();
         verify(view).login();
     }

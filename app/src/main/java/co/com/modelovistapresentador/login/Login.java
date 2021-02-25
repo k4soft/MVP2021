@@ -1,6 +1,7 @@
 package co.com.modelovistapresentador.login;
 
 import co.com.modelovistapresentador.model.Credencial;
+import co.com.modelovistapresentador.persistencia.Dao;
 
 public interface Login {
 
@@ -24,6 +25,7 @@ public interface Login {
     interface Model{
         void setCredenciales(Credencial credencial);
         void validarInformacion();
+        void setDao(Dao dao);
     }
 
 
